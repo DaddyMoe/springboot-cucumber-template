@@ -1,5 +1,7 @@
-package com.mosesmansaray.springboot.inegration.cucumber;
+package com.mosesmansaray.springboot.inegration.cucumber.controllers;
 
+import com.mosesmansaray.springboot.inegration.cucumber.constants.AcceptanceTestConstants;
+import com.mosesmansaray.springboot.inegration.cucumber.Application;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +30,7 @@ public class HelloControllerIT {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL(AcceptanceTestConstants.BASE_URI + "/");
+        this.base = new URL(AcceptanceTestConstants.HELLO_WORLD_URI);
     }
 
     @Test

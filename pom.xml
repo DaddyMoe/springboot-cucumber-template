@@ -56,19 +56,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.4</version>
+            <version>1.16.10</version>
         </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>18.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.karneim</groupId>
-            <artifactId>pojobuilder</artifactId>
-            <version>3.4.0</version>
         </dependency>
         <!--Ends: Library Helpers-->
 
@@ -103,19 +97,25 @@
             </plugin>
 
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>${maven.failsafe.plugin}</version>
+            <executions>
+                <execution>
+                    <id>acceptance-test</id>
+                    <goals>
+                        <goal>integration-test</goal>
+                        <goal>verify</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <!-- To test both unit test and acceptance, remove -->
+                <includes>
+                    <include>**/*IntegrationTest.java</include>
+                    <include>**/*IntegrationTests.java</include>
+                </includes>
+            </configuration>
             </plugin>
         </plugins>
     </build>

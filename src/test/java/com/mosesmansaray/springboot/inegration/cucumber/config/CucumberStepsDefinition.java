@@ -1,5 +1,6 @@
-package com.mosesmansaray.springboot.inegration.cucumber;
+package com.mosesmansaray.springboot.inegration.cucumber.config;
 
+import com.mosesmansaray.springboot.inegration.cucumber.Application;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.boot.test.WebIntegrationTest;
